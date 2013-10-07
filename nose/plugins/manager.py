@@ -329,6 +329,8 @@ class ZeroNinePlugin:
             if not hasattr(self.plugin, 'addDeprecated'):
                 return
             return self.plugin.addDeprecated(test.test)
+        if test is None:
+            return
         # add capt
         capt = test.capturedOutput
         return self.plugin.addError(test.test, err, capt)
